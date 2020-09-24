@@ -7,8 +7,12 @@ const AddBrand = () => {
         <Layout>
             <CollectionForm
                 title='Add Collection'
-                submit = {async (formData) => {
-                    const res = await axios.post('/api/brand/new-collection', formData);
+                submit={async (formData) => {
+                    for (let v of formData.keys()) {
+                        console.log(v)
+                        
+                    }
+                    const res = await axios.post('/api/collection/new-collection', formData);
                     console.log(res)
                     }
                 }

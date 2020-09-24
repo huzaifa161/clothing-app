@@ -18,6 +18,9 @@ const CollectionForm = props => {
             case 'description':
                 setDescription(value);
                 break;
+            case 'brand':
+                setBrand(value);
+                break;
             case 'image':
                 setImage(files[0])
                 break;
@@ -44,11 +47,13 @@ const CollectionForm = props => {
     useEffect(() => {
         fetchBrands();
     }, [])
+
+    useEffect(() => {
+        console.log('change');
+        if (!brand && brands.length) setBrand(brands[0]._id);
+    },[brands])
     
 
-    const options = brands.length ? 
-        brands.map(brand => (<option key={brand._id} value={brand._id}>{brand.name}</option>))
-        : <option>Loading</option>
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -62,6 +67,10 @@ const CollectionForm = props => {
             clearInput();
         }
     }
+        const options = brands.length ? 
+        brands.map(brand => (<option key={brand._id} value={brand._id}>{brand.name}</option>))
+        : <option>Loading</option>
+
 
     return (
         <div className='form__wrapper' onSubmit={onSubmit}>
@@ -72,7 +81,7 @@ const CollectionForm = props => {
                     <label className='form__control--label'>Collection Name</label>
                 </div>
                 <div className='form__control'>
-                    <select defaultValue='Select Brand' className='form__control--select'>
+                    <select value={brand} name='brand' onChange={e => onHandleChange(e,'brand')} className='form__control--select'>
                         {options}
                     </select>
                 </div>

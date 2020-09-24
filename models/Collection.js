@@ -1,5 +1,5 @@
-const mongoose, { Schema } = require('mongoose');
-
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 const CollectionSchema = new Schema({
 
     name: {
@@ -7,7 +7,7 @@ const CollectionSchema = new Schema({
         required: true
     },
     description: String,
-    images: [String],
+    imageUrl: String,
     brand: {
         type: Schema.Types.ObjectId,
         ref: 'Brand'

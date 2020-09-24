@@ -11,9 +11,13 @@ exports.createBrand = (req, res) => {
     form.parse(req, async (err, fields, files) => {
         if (err) return res.status(400).json({ error: 'Image could not be uploaded' });
         try {
-            const result = await cloudinary.uploader.upload(files.image.path, { folder: 'brand' })
+
             const brand = new Brand(fields);
-            brand.imageUrl = result.secure_url;
+
+            if (files.image) {
+                const result = await cloudinary.uploader.upload(files.image.path, { folder: 'brand' })
+                brand.imageUrl = result.secure_url;
+            }
 
             await brand.save()
 
