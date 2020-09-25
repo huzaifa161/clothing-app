@@ -77,7 +77,7 @@ const CollectionForm = props => {
             <form className='form'>
                 <h3 className='form__heading'>{props.title}</h3>
                 <div className='form__control'>
-                    <input type='text' value={name} name='name' onChange={(e) => onHandleChange(e, 'name')} placeholder='Collection Name' className='form__control--input' />
+                    <input type='text' value={name} name='name' onChange={(e) => onHandleChange(e, 'name')} placeholder='Collection Name' className='form__control--input' autoComplete="off" />
                     <label className='form__control--label'>Collection Name</label>
                 </div>
                 <div className='form__control'>
