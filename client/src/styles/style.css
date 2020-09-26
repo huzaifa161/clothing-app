@@ -112,3 +112,77 @@
     color: #ff8f00;
     border: 2px solid #ff8f00;
 }
+.button--inline{
+    width: auto;
+}
+
+
+
+/* BRAND COMPONENT*/
+.brand__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 32px;
+}
+
+.brand__item {
+    width: 200px;
+    margin: 32px;
+    /* height: 250px; */
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    transition: all .1s ease-out;
+}
+
+.brand__item:hover {
+    transform: translateY(-2px);
+}
+
+.brand__item--image {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+}
+
+.brand__name {
+    min-height: 40px;
+    text-align: center;
+    padding: 5px;
+    font-weight: 700;
+    color: #424242;
+}
+
+
+/*COLLECTION COMPONENT*/
+
+.collection__list{
+    width: 70%;
+    margin: 12px auto;
+}
+.collection__item{
+    padding: 8px;
+    border-bottom: 1px solid #E0E0E0;
+}
+.collection__name{
+
+    color: #424242;
+    font-weight: 700;
+}
+.collection__name:link{
+    color:#424242;
+}
+.collection__name:visited {
+    color: #424242;
+}
+
+
+
+
+
+
+.heading{
+    text-align: center;
+    margin: 12px;
+}
+.heading--primary{
+    font-size: 24px;
+}

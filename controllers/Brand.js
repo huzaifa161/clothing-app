@@ -38,3 +38,13 @@ exports.getBrands = async (req, res) => {
         res.json([]);
     }
 }
+
+exports.getBrand = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const brand = await Brand.findById(id).exec();
+        res.json(brand)
+    } catch (err) {
+        res.status(400).json({ error: 'Something went wrong' });
+    }
+}

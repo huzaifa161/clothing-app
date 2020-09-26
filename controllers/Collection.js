@@ -13,7 +13,6 @@ exports.createCollection = (req, res) => {
         const collection = new Collection(fields);
 
         try {
-            console.log(collection)
             if (files.image) {
                 const result = await cloudinary.uploader.upload(files.image.path, { folder: 'collection' })
                 collection.imageUrl = result.secure_url;
@@ -28,9 +27,25 @@ exports.createCollection = (req, res) => {
         } catch (err) {
             res.status(400).json({ error: 'Something went wrong' });
         }
-
-
-
-
     })
+}
+
+exports.getCollections = async (req, res) => {
+    try {
+        const collections = await Collection.find().exec();
+        res.json(collections);
+    } catch (err) {
+        res.json([]);
+    }
+}
+
+exports.getCollection = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const collection = await Collection.findById(id).exec();
+        res.json(collection)
+    } catch (err) {
+        console.log(err)
+        res.status(400).json({ error: 'Something went wrong' });
+    }
 }

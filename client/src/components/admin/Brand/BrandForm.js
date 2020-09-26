@@ -2,9 +2,8 @@ import React,{ useState } from 'react';
 const BrandForm = props => {
 
     const form = new FormData();    
-    console.log(props.brand)
-    const [name, setName] = useState(props.brand.name || '');
-    const [description, setDescription] = useState('');
+    const [name, setName] = useState(props.brand?.name || '');
+    const [description, setDescription] = useState(props.brand?.description || '');
     const [image, setImage] = useState(null);
 
     
