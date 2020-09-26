@@ -12,17 +12,37 @@
     padding: 20px 0;
     box-shadow: 0 0 4px rgba(0, 0, 0, .30);
 }
+.form--large{
+    width: 700px;
+}
 
 .form__heading {
     text-align: center;
     margin: 12px 0;
 }
 
+.form__control--inline{
+    display: flex;
+    max-width: 96%;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+}
 .form__control {
     width: 96%;
     margin: auto;
     margin-bottom: 20px;
     position: relative;
+}
+.form__control-1-3{
+    width: 30%;
+    margin: 20px 8px;
+    flex: 1 0 auto;
+}
+.form__control-1-2 {
+    width: 44%;
+    margin: 12px 8px;
+    flex: 1 0 auto;
 }
 
 .form__control--input {
@@ -40,7 +60,7 @@
     font-size: 15px;
 }
 .form__control--select{
-        padding: 8px 12px;
+    padding: 8px 12px;
     width: 100%;
     border: 1px solid #bdbdbd;
     font-size: 15px;
@@ -115,7 +135,10 @@
 .button--inline{
     width: auto;
 }
-
+.button--add{
+    color: black;
+    border: 2px solid black;
+}
 
 
 /* BRAND COMPONENT*/
@@ -182,6 +205,7 @@
 .heading{
     text-align: center;
     margin: 12px;
+    font-weight:700;
 }
 .heading--primary{
     font-size: 24px;

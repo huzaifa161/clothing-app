@@ -49,8 +49,8 @@ const BrandForm = props => {
     }
 
     return (
-        <div className='form__wrapper' onSubmit={onSubmit}>
-            <form className='form'>
+        <div className='form__wrapper' >
+            <form className='form' onSubmit={onSubmit}>
                 <h3 className='form__heading'>{props.title}</h3>
                 <div className='form__control'>
                     <input type='text' value={name} name='name'  onChange={(e) => onHandleChange(e, 'name')} placeholder='Brand Name' className='form__control--input' />
